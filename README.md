@@ -25,6 +25,10 @@ Documentation for LeetTools.
 
 # Suggested Branch 
 
-- Main: Update readme
+- Main
+    Manual for
+    - Installation
+    - Configuration
+    - Deployment
 - leettools-doc-workshop: using MKdoc framework to build static site
 - leettools-doc-publish: github page service will use this branch to deploy the document site

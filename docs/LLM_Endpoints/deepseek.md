@@ -1,6 +1,6 @@
 # Using DeepSeek API
 
-We can also use any OpenAI-compatible LLM inference endpoint by setting the related 
+Leettools also use any OpenAI-compatible LLM inference endpoint by setting the related 
 environment variable. For example, we can use the DeepSeek API by setting the following
 environment variables:
 

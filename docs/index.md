@@ -1,6 +1,6 @@
 # Welcome to Leettools
 
-visit leettools repo at [Leetools](https://github.com/leettools-dev/leettools).
+Visit leettools dev repo at [Leetools](https://github.com/leettools-dev/leettools).
 
 LeetTools is an AI search assistant that can perform highly customizable search workflows and save the search results and generated outputs to local knowledge bases. With an automated document pipeline that handles data ingestion, indexing, and storage, we can easily run complext search workflows that query, extract and generate content from the web or local knowledge bases.
 

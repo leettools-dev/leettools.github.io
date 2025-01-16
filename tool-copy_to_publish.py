@@ -6,6 +6,13 @@ def copy_site_content_to_branch_root():
     source_dir = 'site/'  # 源目录
     target_branch = 'leettools-doc-publish'  # 目标分支
 
+    # 检查是否有未提交的更改，并提示用户处理
+    status_result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
+    if status_result.stdout:
+        print("有未提交的更改，请先处理这些更改:")
+        print(status_result.stdout)
+        return
+
     # 切换到目标分支
     subprocess.run(['git', 'checkout', target_branch], check=True)
 
@@ -29,6 +36,12 @@ def copy_site_content_to_branch_root():
             shutil.copytree(s, d, dirs_exist_ok=True)  # dirs_exist_ok=True 允许覆盖已存在的目录
         else:
             shutil.copy2(s, d)  # copy2 用于覆盖文件
+
+    # 检查并删除根目录中的 site/ 文件夹（如果存在）
+    site_dir_path = os.path.join(target_root_dir, 'site')
+    if os.path.exists(site_dir_path):
+        shutil.rmtree(site_dir_path)
+        print(f"Deleted 'site/' directory from the root of {target_branch} branch.")
 
 
 if __name__ == "__main__":

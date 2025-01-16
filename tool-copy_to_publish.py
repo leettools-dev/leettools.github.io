@@ -12,6 +12,15 @@ def copy_site_content_to_branch_root():
     # 获取当前工作目录，即目标分支的根目录
     target_root_dir = os.getcwd()
 
+    # 删除目标根目录现有内容（慎重操作，确保不会删除.git等重要文件）
+    for item in os.listdir(target_root_dir):
+        if item not in ['.git', 'site']:  # 保留.git和源site目录
+            path = os.path.join(target_root_dir, item)
+            if os.path.isfile(path) or os.path.islink(path):
+                os.unlink(path)
+            elif os.path.isdir(path):
+                shutil.rmtree(path)
+
     # 复制文件夹内容到根目录，直接覆盖同名文件
     for item in os.listdir(source_dir):
         s = os.path.join(source_dir, item)
@@ -21,17 +30,6 @@ def copy_site_content_to_branch_root():
         else:
             shutil.copy2(s, d)  # copy2 用于覆盖文件
 
-    # 添加更改到 git
-    subprocess.run(['git', 'add', '.'], check=True)
-
-    # 提交更改
-    subprocess.run(['git', 'commit', '-m', 'Update root content from site directory'], check=True)
-
-    # 可选：推送到远程仓库
-    # subprocess.run(['git', 'push'], check=True)
-
-    # 切换回原始分支（如果需要）
-    # subprocess.run(['git', 'checkout', '-'], check=True)
 
 if __name__ == "__main__":
     copy_site_content_to_branch_root()

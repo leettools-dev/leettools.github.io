@@ -1,5 +1,16 @@
 # leettools.github.io
-Documentation for LeetTools.
+
+Documentation for LeetTools. See at [https://leettools-dev.github.io/](https://leettools-dev.github.io/)
+
+
+# Quick Start 
+
+- Switch to the branch `leettools-doc-workshop`.
+- Edit documents under `docs/`. You can modify configurations in `mkdocs.yml`. Use `mkdocs serve` to preview changes.
+- Run `mkdocs build` to generate the site (this will create all the static HTML files in the `site/` directory).
+- Commit and push changes to the `leettools-doc-workshop` branch.
+- Run `python tool-copy_to_publish.py`. This script will switch to the `leettools-doc-publish` branch and copy all contents from `/site` to the root directory of `leettools-doc-publish`.
+- Commit and push changes to the `leettools-doc-publish` branch. The website at [https://leettools-dev.github.io/](https://leettools-dev.github.io/) will be automatically updated.
 
 # Installation
 

@@ -12,34 +12,31 @@ Documentation for LeetTools. See at [https://leettools-dev.github.io/](https://l
 - Run `python tool-copy_to_publish.py`. This script will switch to the `leettools-doc-publish` branch and copy all contents from `/site` to the root directory of `leettools-doc-publish`.
 - Commit and push changes to the `leettools-doc-publish` branch. The website at [https://leettools-dev.github.io/](https://leettools-dev.github.io/) will be automatically updated.
 
+
 # Installation
 
-- use conda to create a python (>= 3.8) environment
-- `pip install mkdocs`
-- `mkdocs new .`
+- Use conda to create a Python (>= 3.8) environment.
+- Run `pip install mkdocs`.
+- Run `mkdocs new .` to initialize a new MkDocs project.
 
 # Configuration
 
-- edit mkdocs.yml 
-- add documents into docs/
+- Edit `mkdocs.yml` to configure your project.
+- Add documents into the `docs/` directory.
 
-# Local test
+# Local Test
 
-- `mkdocs serve`
-- check at http://127.0.0.1:8000
+- Run `mkdocs serve` to start a local server.
+- Check the site at http://127.0.0.1:8000. 
 
 # Deployment
 
-- use `mkdocs build` to generate site/
-- push all that under site/ into a publish branch (a new branch)
-- deploy pages at github by using the publish branch
+- Use `mkdocs build` to generate the site in the `site/` directory.
+- Push all files under `site/` into a new branch dedicated to publishing.
+- Deploy the pages on GitHub using this publish branch.
 
-# Suggested Branch 
+# Suggested Branches
 
-- Main
-    Manual for
-    - Installation
-    - Configuration
-    - Deployment
-- leettools-doc-workshop: using MKdoc framework to build static site
-- leettools-doc-publish: github page service will use this branch to deploy the document site
+- Main: Contains the main README and other essential project files.
+- leettools-doc-workshop: Utilizes the MkDocs framework to build the static site.
+- leettools-doc-publish: This branch is used by GitHub Pages to deploy the documentation site.
